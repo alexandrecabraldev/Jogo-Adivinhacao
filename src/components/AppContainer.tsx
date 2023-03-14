@@ -6,9 +6,14 @@ import { Button } from "./Button";
 export function AppContainer(){
     return(
         <MainContainer>
+
             <Title>Jogo da Adivinhação</Title>
             <Subtitle>Adivinhe o número entre 0 e 100</Subtitle>
-            <Button>Tentar</Button>
+
+            <ContainerButton>
+                <Button>Tentar</Button>
+            </ContainerButton>
+
         </MainContainer>
     )
 }
@@ -20,3 +25,10 @@ const MainContainer = styled.main`
     box-shadow: 0px 3px 4px ${props=>props.theme.shadow};
     
 `
+
+const ContainerButton= styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    
+`;
