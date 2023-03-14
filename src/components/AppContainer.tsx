@@ -2,18 +2,15 @@ import styled from "styled-components";
 import { Title } from "./Title";
 import { Subtitle } from "./Subtitle";
 import { Button } from "./Button";
+import { Input } from "./Input";
 
 export function AppContainer(){
     return(
         <MainContainer>
-
             <Title>Jogo da Adivinhação</Title>
             <Subtitle>Adivinhe o número entre 0 e 100</Subtitle>
 
-            <ContainerButton>
-                <Button>Tentar</Button>
-            </ContainerButton>
-
+            <Input/>
         </MainContainer>
     )
 }
@@ -25,10 +22,3 @@ const MainContainer = styled.main`
     box-shadow: 0px 3px 4px ${props=>props.theme.shadow};
     
 `
-
-const ContainerButton= styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    
-`;
