@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Title } from "./Title";
-import { Subtitle } from "./SubTitle";
+import { Subtitle } from "./Subtitle";
 
 export function AppContainer(){
     return(
