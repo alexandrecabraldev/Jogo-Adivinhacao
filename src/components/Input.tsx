@@ -13,15 +13,15 @@ export function Input(){
 const InputField = styled.input`
     height: 100%;
     width: 100%;
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0.8rem 1rem 0.8rem;
     border-radius: 6px 0 0 6px;
     border: 2px solid ${props=>props.theme.numberSlot};
     background-color: ${props=>props.theme.numberSlot};
+    outline: none;
 
-    :focus{
-        outline: none;
+    ::-webkit-inner-spin-button, ::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
     }
-
 `;
 
 const Form =styled.form`
