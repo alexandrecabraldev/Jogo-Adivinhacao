@@ -1,7 +1,9 @@
+import {AppContainer} from "./components/AppContainer"
+
 function App() {
-  
+
   return(
-  <h1>test</h1>
+    <AppContainer/>
   )
 }
 
