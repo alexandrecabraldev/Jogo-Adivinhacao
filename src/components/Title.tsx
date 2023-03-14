@@ -19,4 +19,5 @@ const TitleText = styled.h1`
     font-weight: 600;
     line-height: 1.8rem;
     margin-bottom: 1rem;
+    text-align: center;
 `
