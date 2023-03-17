@@ -4,7 +4,7 @@ import { Button } from "./Button";
 export function Input(){
     return(
         <Form>
-            <InputField type={"number"}/>
+            <InputField type={"number"} placeholder={"0"}/>
             <Button>Tentar</Button>
         </Form>
     );
@@ -22,6 +22,7 @@ const InputField = styled.input`
     ::-webkit-inner-spin-button, ::-webkit-outer-spin-button { 
         -webkit-appearance: none; 
     }
+
 `;
 
 const Form =styled.form`

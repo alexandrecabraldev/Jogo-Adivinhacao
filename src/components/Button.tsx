@@ -6,7 +6,7 @@ interface ButtonProps{
 
 export function Button(props:ButtonProps){
     return(
-        <ButtonApp>{props.children}</ButtonApp>
+        <ButtonApp type="submit">{props.children}</ButtonApp>
     );
 }
 
