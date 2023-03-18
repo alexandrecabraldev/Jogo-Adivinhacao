@@ -6,7 +6,7 @@ interface ButtonProps{
 
 export function Button(props:ButtonProps){
     return(
-        <ButtonApp type="submit">{props.children}</ButtonApp>
+        <ButtonApp type="submit" onSubmit={event?.preventDefault}>{props.children}</ButtonApp>
     );
 }
 
@@ -16,9 +16,9 @@ const ButtonApp = styled.button`
     border-radius: 0 6px 6px 0;
     padding: 1rem;
     border: none;
-
+    
     font-size: 1rem;
     font-weight: 700;
 
-
+    cursor: pointer;
 `;

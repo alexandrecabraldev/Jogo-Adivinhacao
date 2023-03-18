@@ -1,14 +1,34 @@
 import styled from "styled-components";
 import { Button } from "./Button";
+import { ChangeEvent, FormEvent, useState } from "react";
+
 
 export function Input(){
+    const [value, setValue] = useState("");
+    console.log(value);
+
+    function handleInput(event: ChangeEvent<HTMLInputElement>){
+        const valueInput= event.target.value;
+
+        setValue(valueInput);
+       
+    }
+
+    function handleSubmit(event:FormEvent){
+        event.preventDefault();
+    }
+
     return(
-        <Form>
-            <InputField type={"number"} placeholder={"0"}/>
+        <Form onSubmit={handleSubmit}>
+            <InputField type={"number"} max={9} placeholder={"0"} onChange={handleInput} value={value}/>
             <Button>Tentar</Button>
         </Form>
     );
 }
+
+
+
+
 
 const InputField = styled.input`
     height: 100%;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Title } from "./Title";
 import { Subtitle } from "./Subtitle";
-import { Button } from "./Button";
 import { Input } from "./Input";
 
 export function AppContainer(){
