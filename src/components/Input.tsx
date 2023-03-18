@@ -1,21 +1,43 @@
 import styled from "styled-components";
 import { Button } from "./Button";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 
 
 export function Input(){
     const [value, setValue] = useState("");
-    console.log(value);
+    const [randomNumber, setRandomNumber]=useState<number|string>(0);
+
+    useEffect(() => {
+        let numero =Math.floor(Math.random()* 10);
+        
+        if(numero==0){
+            numero=1;
+            setRandomNumber(numero);
+        }else{
+            setRandomNumber(numero);
+        }
+        console.log(numero);
+        
+    },[]);
+    
+    
 
     function handleInput(event: ChangeEvent<HTMLInputElement>){
         const valueInput= event.target.value;
 
         setValue(valueInput);
-       
     }
 
     function handleSubmit(event:FormEvent){
         event.preventDefault();
+        
+        if(randomNumber==value){
+            console.log("ACERTOU");
+        }else{
+            console.log("errou");
+        }
+
+        setValue("");
     }
 
     return(
