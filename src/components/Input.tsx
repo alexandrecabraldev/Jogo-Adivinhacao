@@ -2,10 +2,14 @@ import styled from "styled-components";
 import { Button } from "./Button";
 import { ChangeEvent, FormEvent, useState, useEffect } from "react";
 
+interface InterfaceInput{
+    OnHandleScreenCondition: Function;
+}
+export function Input({OnHandleScreenCondition}:InterfaceInput){
 
-export function Input(){
     const [value, setValue] = useState("");
     const [randomNumber, setRandomNumber]=useState<number|string>(0);
+    const [atmp,setAtmp] = useState(1);
 
     useEffect(() => {
         let numero =Math.floor(Math.random()* 10);
@@ -19,8 +23,7 @@ export function Input(){
         console.log(numero);
         
     },[]);
-    
-    
+       
 
     function handleInput(event: ChangeEvent<HTMLInputElement>){
         const valueInput= event.target.value;
@@ -31,9 +34,15 @@ export function Input(){
     function handleSubmit(event:FormEvent){
         event.preventDefault();
         
+        setAtmp(prev=>prev+1);
+
+        console.log(atmp);
+
         if(randomNumber==value){
-            console.log("ACERTOU");
+            OnHandleScreenCondition(true,atmp);
+            console.log("Acertou");
         }else{
+            OnHandleScreenCondition(false,atmp);
             console.log("errou");
         }
 
@@ -41,15 +50,14 @@ export function Input(){
     }
 
     return(
+
         <Form onSubmit={handleSubmit}>
             <InputField type={"number"} max={9} placeholder={"0"} onChange={handleInput} value={value}/>
             <Button>Tentar</Button>
         </Form>
+       
     );
 }
-
-
-
 
 
 const InputField = styled.input`

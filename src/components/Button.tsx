@@ -22,3 +22,19 @@ const ButtonApp = styled.button`
 
     cursor: pointer;
 `;
+
+export const ButtonSecondScreen = styled.button`
+    
+    background-color: ${props=>props.theme.button};
+    color: ${props=>props.theme.white};
+    border-radius: 6px;
+    padding: 1rem;
+    border: none;
+    
+    font-size: 1rem;
+    font-weight: 700;
+
+    margin-top: 2rem;
+
+    cursor: pointer;
+`;
